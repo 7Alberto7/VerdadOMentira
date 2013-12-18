@@ -70,15 +70,9 @@ public class Juego extends Activity {
     	Calendar cal = new GregorianCalendar();
     	tiempoInicio = cal.getTimeInMillis();
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        // Specify the calling package to identify your application
+
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getClass()
                 .getPackage().getName());
- 
-        // Given an hint to the recognizer about what the user is going to say
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
-        // Specify how many results you want to receive. The results will be
-        // sorted where the first result is the one with higher confidence.
  
         intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, NUM_FRASES);
  
