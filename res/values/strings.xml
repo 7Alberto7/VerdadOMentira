@@ -7,9 +7,8 @@
     <string name="title_activity_juego">Juego</string>
     <string name="habla">Habla</string>
     <string name="jugar">Jugar</string>
+    <string name="pulsar_para_hablar">Pulsa el micrófono</string>
     <string name="title_activity_tutorial">Tutorial</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_nosotros">Nosotros</string>
     <string name="nosotros_texto">Inactec está formado por un grupo de ingenieros 
         especializados en el desarrollo web y el área de movilidad.\n\n
