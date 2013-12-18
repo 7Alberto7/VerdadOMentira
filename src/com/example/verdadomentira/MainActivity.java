@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 		
 		btnNosotros = (Button) findViewById(R.id.btnNosotros);
 		
-		btnPlay.setOnClickListener(new View.OnClickListener() {
+		btnNosotros.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
