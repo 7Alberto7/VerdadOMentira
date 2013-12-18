@@ -1,4 +1,6 @@
-package com.example.verdadomentira;
+package com.inactec.verdadomentira;
+
+import com.inactec.verdadomentira.R;
 
 import android.os.Bundle;
 import android.app.Activity;

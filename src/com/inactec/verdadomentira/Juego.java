@@ -1,4 +1,6 @@
-package com.example.verdadomentira;
+package com.inactec.verdadomentira;
+
+import com.inactec.verdadomentira.R;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;

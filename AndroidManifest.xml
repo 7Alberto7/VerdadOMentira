@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.verdadomentira"
+    package="com.inactec.verdadomentira"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -15,7 +15,7 @@
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.verdadomentira.MainActivity"
+            android:name="com.inactec.verdadomentira.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -25,16 +25,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.verdadomentira.Juego"
+            android:name="com.inactec.verdadomentira.Juego"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.verdadomentira.Tutorial"
+            android:name="com.inactec.verdadomentira.Tutorial"
             android:label="@string/title_activity_tutorial" >
         </activity>
         <activity
-            android:name="com.example.verdadomentira.Nosotros"
+            android:name="com.inactec.verdadomentira.Nosotros"
             android:label="@string/title_activity_nosotros" >
         </activity>
     </application>
