@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Verdad o Mentira</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="nosotros">Nosotros</string>
+    <string name="title_activity_juego">Juego</string>
+    <string name="habla">Habla</string>
+    <string name="jugar">Jugar</string>
+
+</resources>
