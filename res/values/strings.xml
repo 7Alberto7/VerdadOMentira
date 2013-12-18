@@ -7,5 +7,18 @@
     <string name="title_activity_juego">Juego</string>
     <string name="habla">Habla</string>
     <string name="jugar">Jugar</string>
+    <string name="title_activity_tutorial">Tutorial</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_nosotros">Nosotros</string>
+    <string name="nosotros_texto">Inactec está formado por un grupo de ingenieros 
+        especializados en el desarrollo web y el área de movilidad.\n\n
+        Nuestra función principal es la de aprender y desarrollar las tecnologías más 
+        modernas en el desarrollo web y móvil. Realizamos proyectos propios y por cuenta ajena.\n\n
+        Para más info, visítanos en inactec.com.
+	</string>
+    <string name="tutorial_texto">VERDAD O MENTIRA es una app de entretenimiento que detecta si estás mintiendo o estás diciendo la verdad.\n\n
+        Para empezar, pulse el botón "Jugar". Una vez en la pantalla del detector de mentiras, pulse el micrófono y diga lo que quiera. La app detectará si miente o dice la verdad.
+	</string>
 
 </resources>
