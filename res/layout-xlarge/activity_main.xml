@@ -13,45 +13,51 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/padding_large"
         android:src="@drawable/verdad"/>
-    
-    <Button 
-        android:id="@+id/btnTutorial"
-        android:layout_width="@dimen/tam_xlarge"
-        android:layout_height="@dimen/tam_xlarge_rounded"
-        android:layout_centerHorizontal="true"
-       	android:background="@drawable/btn_rounded"
-        android:contentDescription="@string/jugar"
-       	android:layout_above="@+id/btnPlay"
-        android:text="@string/tutorial"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textAppearance="@android:style/TextAppearance.Large"/>
 
-    <Button
-        android:id="@+id/btnPlay"
-        android:layout_width="@dimen/tam_xlarge"
-        android:layout_height="@dimen/tam_xlarge"
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/jugar"
-        android:contentDescription="@string/jugar"
-        android:text="@string/jugar"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textAppearance="@android:style/TextAppearance.Large" />
-    
-    <Button
-        android:id="@+id/btnNosotros"
-        android:layout_width="@dimen/tam_xlarge"
-        android:layout_height="@dimen/tam_xlarge_rounded"
-        android:layout_centerHorizontal="true"
-       	android:background="@drawable/btn_rounded"
-        android:contentDescription="@string/jugar"
-       	android:layout_below="@+id/btnPlay"
-        android:text="@string/nosotros"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        android:layout_centerVertical="true">
+
+	    <Button
+	        android:id="@+id/btnPlay"
+	        android:layout_width="@dimen/tam_xlarge"
+	        android:layout_height="@dimen/tam_xlarge"
+	        android:background="@drawable/jugar"
+	        android:contentDescription="@string/jugar"
+	        android:text="@string/jugar"
+	        android:textColor="@android:color/white"
+	        android:textStyle="bold"
+	        android:textAppearance="@android:style/TextAppearance.Large" />
+	    
+	    <Button 
+	        android:id="@+id/btnTutorial"
+	        android:layout_width="@dimen/tam_xlarge"
+	        android:layout_height="@dimen/tam_xlarge_rounded"
+	        android:layout_centerHorizontal="true"
+	       	android:background="@drawable/btn_rounded"
+	        android:contentDescription="@string/jugar"
+	       	android:layout_below="@+id/btnPlay"
+	        android:text="@string/tutorial"
+	        android:textColor="@android:color/white"
+	        android:textStyle="bold"
+	        android:textAppearance="@android:style/TextAppearance.Large"/>
+	    
+	    <Button
+	        android:id="@+id/btnNosotros"
+	        android:layout_width="@dimen/tam_xlarge"
+	        android:layout_height="@dimen/tam_xlarge_rounded"
+	        android:layout_centerHorizontal="true"
+	       	android:background="@drawable/btn_rounded"
+	        android:contentDescription="@string/jugar"
+	       	android:layout_below="@+id/btnTutorial"
+	        android:text="@string/nosotros"
+	        android:textAppearance="@android:style/TextAppearance.Large"
+	        android:textColor="@android:color/white"
+	        android:textStyle="bold" />
+	
+	</RelativeLayout>
  
     <ImageView
         android:layout_width="match_parent"
