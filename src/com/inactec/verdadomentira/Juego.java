@@ -1,11 +1,16 @@
 package com.inactec.verdadomentira;
 
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 import com.inactec.verdadomentira.R;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
@@ -28,11 +33,26 @@ public class Juego extends Activity {
     private ImageView imgVeredicto;
     private MediaPlayer mentira1, mentira2, mentira3, verdad1, verdad2, verdad3;
     private long tiempoInicio, tiempoFin;
+	private AdView adView;
  
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
+
+		LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
+		String provider = locationManager.getBestProvider(criteria, true);
+		Location location = locationManager.getLastKnownLocation(provider);
+
+		adView = (AdView) findViewById(R.id.adViewJuego);
+		AdRequest request = new AdRequest();
+
+	    request.setLocation(location);
+
+	    adView.loadAd(request);
+        
+     
         txtFrase = (TextView) findViewById(R.id.txtFrase);
         btnHablar = (ImageButton) findViewById(R.id.btnHablar);
         imgVeredicto = (ImageView) findViewById(R.id.imgVeredicto);

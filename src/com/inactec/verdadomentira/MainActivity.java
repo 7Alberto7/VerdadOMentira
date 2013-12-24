@@ -1,11 +1,19 @@
 package com.inactec.verdadomentira;
 
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 import com.inactec.verdadomentira.R;
 
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
@@ -13,11 +21,24 @@ public class MainActivity extends Activity {
 	Button btnPlay;
 	Button btnTutorial;
 	Button btnNosotros;
+	AdView adView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
+		String provider = locationManager.getBestProvider(criteria, true);
+		Location location = locationManager.getLastKnownLocation(provider);
+
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest request = new AdRequest();
+
+	    request.setLocation(location);
+
+	    adView.loadAd(request);
 		
 		btnPlay = (Button) findViewById(R.id.btnPlay);
 		

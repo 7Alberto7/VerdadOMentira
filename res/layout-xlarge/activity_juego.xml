@@ -1,38 +1,65 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_blue"
     android:gravity="center_horizontal"
     android:orientation="vertical" >
+    
+ 	<RelativeLayout 
+        android:id="@+id/lytContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lytAdViewJuego">
 
-    <ImageButton
-        android:id="@+id/btnHablar"
-        android:layout_width="@dimen/tam_xlarge"
-        android:layout_height="@dimen/tam_xlarge"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/microphone"
-        android:contentDescription="@string/habla"
-        android:layout_margin="@dimen/padding_large"
-        tools:context=".VoiceRecognitionActivity" />
- 
-    <TextView
-        android:id="@+id/txtFrase"
+	    <ImageButton
+	        android:id="@+id/btnHablar"
+	        android:layout_width="@dimen/tam_xlarge"
+	        android:layout_height="@dimen/tam_xlarge"
+	        android:layout_centerHorizontal="true"
+	        android:background="@drawable/microphone"
+	        android:contentDescription="@string/habla"
+	        android:layout_margin="@dimen/padding_large"
+	        tools:context=".VoiceRecognitionActivity" />
+	 
+	    <TextView
+	        android:id="@+id/txtFrase"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/pulsar_para_hablar"
+	        android:textColor="@android:color/white"
+	        android:textStyle="bold"
+	        android:textAppearance="@android:style/TextAppearance.Large"
+	        android:padding="@dimen/padding_small"
+	        android:layout_below="@+id/btnHablar"  />
+	 
+	    <ImageView
+	        android:id="@+id/imgVeredicto"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="@string/app_name"
+	        android:layout_alignParentBottom="true"
+	        android:layout_below="@+id/txtFrase"
+	        android:layout_marginTop="@dimen/padding_large"/>
+ 	    
+ 	</RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/lytAdViewJuego"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        android:padding="@dimen/padding_small"
-        android:layout_below="@+id/btnHablar"  />
- 
-    <ImageView
-        android:id="@+id/imgVeredicto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/txtFrase"
-        android:layout_marginTop="@dimen/padding_large"/>
+        android:background="@android:color/black"
+        android:gravity="center_horizontal" >
+
+	    <com.google.ads.AdView
+	        android:id="@+id/adViewJuego"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        ads:adUnitId="ca-app-pub-8747754803103357/4113848424"
+	        ads:adSize="IAB_LEADERBOARD"
+	        ads:loadAdOnCreate="true"/>
+    </RelativeLayout>
  
 </RelativeLayout>
