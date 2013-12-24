@@ -6,7 +6,6 @@ import com.inactec.verdadomentira.R;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 import android.location.Criteria;
 import android.location.Location;
@@ -15,8 +14,6 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -72,18 +69,6 @@ public class Juego extends Activity {
 				hablar(v);
 			}
 		});
-    }
- 
-    public void checkVoiceRecognition() {
-        // Check if voice recognition is present
-        PackageManager pm = getPackageManager();
-        List<ResolveInfo> activities = pm.queryIntentActivities(new Intent(
-                RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
-        if (activities.size() == 0) {
-            btnHablar.setEnabled(false);
-            Toast.makeText(this, "Voice recognizer not present",
-                    Toast.LENGTH_SHORT).show();
-        }
     }
  
     public void hablar(View view) {
