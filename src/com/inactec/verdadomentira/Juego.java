@@ -40,12 +40,17 @@ public class Juego extends Activity {
 		LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
 		Criteria criteria = new Criteria();
 		String provider = locationManager.getBestProvider(criteria, true);
-		Location location = locationManager.getLastKnownLocation(provider);
+		Location location = null;
+		if (provider != null) {
+			location = locationManager.getLastKnownLocation(provider);
+		}
 
 		adView = (AdView) findViewById(R.id.adViewJuego);
 		AdRequest request = new AdRequest();
 
-	    request.setLocation(location);
+		if (location != null) {
+			request.setLocation(location);
+		}
 
 	    adView.loadAd(request);
         
