@@ -11,8 +11,10 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.view.View;
@@ -79,14 +81,18 @@ public class Juego extends Activity {
     public void hablar(View view) {
     	Calendar cal = new GregorianCalendar();
     	tiempoInicio = cal.getTimeInMillis();
-        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-
-        intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getClass()
-                .getPackage().getName());
- 
-        intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, NUM_FRASES);
- 
-        startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
+    	try{
+            Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+            intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getClass()
+                    .getPackage().getName());
+            intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, NUM_FRASES);
+            startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
+    	}
+    	catch(ActivityNotFoundException e)
+    	{
+    		Intent browserIntent = new Intent(Intent.ACTION_VIEW,   Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.voicesearch"));
+    		startActivity(browserIntent);
+    	}
     }
  
     @Override
