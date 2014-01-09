@@ -19,6 +19,7 @@
         android:contentDescription="@string/nosotros" />
 
     <TextView
+		android:id="@+id/txtNosotros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nosotros_texto"

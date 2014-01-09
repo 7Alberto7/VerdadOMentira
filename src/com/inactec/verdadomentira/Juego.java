@@ -18,6 +18,7 @@ import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -35,11 +36,13 @@ public class Juego extends Activity {
     private MediaPlayer mentira1, mentira2, mentira3, verdad1, verdad2, verdad3;
     private long tiempoInicio, tiempoFin;
 	private AdView adView;
+	private Typeface miFuente;
  
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego);
+		miFuente = Typeface.createFromAsset(getAssets(), "fonts/SigmarOne.ttf");
 
 		LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
 		Criteria criteria = new Criteria();
@@ -60,6 +63,7 @@ public class Juego extends Activity {
         
      
         txtFrase = (TextView) findViewById(R.id.txtFrase);
+        txtFrase.setTypeface(miFuente);
         btnHablar = (ImageButton) findViewById(R.id.btnHablar);
         imgVeredicto = (ImageView) findViewById(R.id.imgVeredicto);
         

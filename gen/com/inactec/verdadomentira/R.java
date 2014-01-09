@@ -11,7 +11,10 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int light_blue=0x7f050000;
+        public static final int blue=0x7f050000;
+        public static final int dark_blue=0x7f050002;
+        public static final int light_blue=0x7f050001;
+        public static final int light_orange=0x7f050003;
     }
     public static final class dimen {
         /** 
@@ -19,44 +22,56 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060009;
-        public static final int activity_vertical_margin=0x7f06000a;
+        public static final int activity_horizontal_margin=0x7f06000b;
+        public static final int activity_vertical_margin=0x7f06000c;
+        public static final int margin_large=0x7f06000f;
+        public static final int margin_medium=0x7f06000e;
+        public static final int margin_small=0x7f06000d;
+        public static final int margin_xlarge=0x7f060010;
         public static final int padding_large=0x7f060002;
         public static final int padding_medium=0x7f060001;
         public static final int padding_small=0x7f060000;
-        public static final int tam_large=0x7f060004;
-        public static final int tam_large_rounded=0x7f060007;
-        public static final int tam_normal=0x7f060003;
-        public static final int tam_normal_rounded=0x7f060006;
-        public static final int tam_xlarge=0x7f060005;
-        public static final int tam_xlarge_rounded=0x7f060008;
+        public static final int tam_ancho_large=0x7f060005;
+        public static final int tam_ancho_normal=0x7f060004;
+        public static final int tam_ancho_peq=0x7f060003;
+        public static final int tam_ancho_xlarge=0x7f060006;
+        public static final int tam_largo_large=0x7f060009;
+        public static final int tam_largo_normal=0x7f060008;
+        public static final int tam_largo_peq=0x7f060007;
+        public static final int tam_largo_xlarge=0x7f06000a;
     }
     public static final class drawable {
         public static final int btn_rounded=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int jugar=0x7f020002;
-        public static final int logo_inactec_brand=0x7f020003;
-        public static final int mentira=0x7f020004;
-        public static final int microphone=0x7f020005;
-        public static final int verdad=0x7f020006;
+        public static final int cabecera=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int jugar=0x7f020003;
+        public static final int logo_inactec_brand=0x7f020004;
+        public static final int mentira=0x7f020005;
+        public static final int microphone=0x7f020006;
+        public static final int shapes_rounded_btn_light_blue=0x7f020007;
+        public static final int shapes_rounded_btn_orange=0x7f020008;
+        public static final int verdad=0x7f020009;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000d;
-        public static final int adView=0x7f0a000b;
+        public static final int action_settings=0x7f0a0010;
+        public static final int adView=0x7f0a000c;
         public static final int adViewJuego=0x7f0a0005;
         public static final int btnHablar=0x7f0a0002;
-        public static final int btnNosotros=0x7f0a000a;
-        public static final int btnPlay=0x7f0a0008;
-        public static final int btnTutorial=0x7f0a0009;
-        public static final int imageView1=0x7f0a000c;
+        public static final int btnNosotros=0x7f0a000b;
+        public static final int btnPlay=0x7f0a0009;
+        public static final int btnTutorial=0x7f0a000a;
+        public static final int imageView1=0x7f0a000d;
+        public static final int imgCabecera=0x7f0a0008;
         public static final int imgVeredicto=0x7f0a0004;
         public static final int lytAdView=0x7f0a0007;
         public static final int lytAdViewJuego=0x7f0a0001;
         public static final int lytContent=0x7f0a0000;
         public static final int lytmain=0x7f0a0006;
-        public static final int nosotros=0x7f0a000f;
-        public static final int tutorial=0x7f0a000e;
+        public static final int nosotros=0x7f0a0012;
+        public static final int tutorial=0x7f0a0011;
         public static final int txtFrase=0x7f0a0003;
+        public static final int txtNosotros=0x7f0a000e;
+        public static final int txtTutorial=0x7f0a000f;
     }
     public static final class layout {
         public static final int activity_juego=0x7f030000;

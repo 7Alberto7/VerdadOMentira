@@ -4,76 +4,72 @@
 	android:id="@+id/lytmain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
+    android:background="@color/dark_blue"
     android:gravity="center"
     tools:context=".MainActivity" >
     
  	<RelativeLayout 
         android:id="@+id/lytContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_above="@+id/lytAdView">
  
 	    <ImageView
+ 	    	android:id="@+id/imgCabecera"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:contentDescription="@string/app_name"
 	        android:layout_alignParentTop="true"
-	        android:layout_marginTop="@dimen/padding_large"
-	        android:src="@drawable/verdad"/>
+	        android:background="@drawable/cabecera"/>
 	
 	    <RelativeLayout 
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerHorizontal="true"
-	        android:layout_centerVertical="true">
+	        android:gravity="center_vertical"
+	        android:layout_below="@+id/imgCabecera">
 	
 		    <Button
 		        android:id="@+id/btnPlay"
-		        android:layout_width="@dimen/tam_large"
-		        android:layout_height="@dimen/tam_large"
-		        android:background="@drawable/jugar"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/shapes_rounded_btn_orange"
 		        android:contentDescription="@string/jugar"
 		        android:text="@string/jugar"
 		        android:textColor="@android:color/white"
 		        android:textStyle="bold"
-		        android:textAppearance="@android:style/TextAppearance.Large" />
+		        android:textAppearance="@android:style/TextAppearance.Large"
+		        android:layout_marginTop="@dimen/margin_large" />
 	    
 		    <Button 
 		        android:id="@+id/btnTutorial"
-		        android:layout_width="@dimen/tam_large"
-		        android:layout_height="@dimen/tam_large_rounded"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
 		        android:layout_centerHorizontal="true"
-		       	android:background="@drawable/btn_rounded"
+		       	android:background="@drawable/shapes_rounded_btn_light_blue"
 		        android:contentDescription="@string/jugar"
 		       	android:layout_below="@+id/btnPlay"
 		        android:text="@string/tutorial"
 		        android:textColor="@android:color/white"
 		        android:textStyle="bold"
-		        android:textAppearance="@android:style/TextAppearance.Large"/>
+		        android:textAppearance="@android:style/TextAppearance.Large"
+		        android:layout_marginTop="@dimen/margin_large"/>
 	    
 		    <Button
 		        android:id="@+id/btnNosotros"
-		        android:layout_width="@dimen/tam_large"
-		        android:layout_height="@dimen/tam_large_rounded"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
 		        android:layout_centerHorizontal="true"
-		       	android:background="@drawable/btn_rounded"
+		       	android:background="@drawable/shapes_rounded_btn_light_blue"
 		        android:contentDescription="@string/jugar"
 		       	android:layout_below="@+id/btnTutorial"
 		        android:text="@string/nosotros"
 		        android:textAppearance="@android:style/TextAppearance.Large"
 		        android:textColor="@android:color/white"
-		        android:textStyle="bold" />
+		        android:textStyle="bold"
+		        android:layout_marginTop="@dimen/margin_large" />
 	
 	    </RelativeLayout>
-	 
-	    <ImageView
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:contentDescription="@string/app_name"
-	        android:layout_alignParentBottom="true"
-	        android:layout_marginTop="@dimen/padding_large"
-	        android:src="@drawable/mentira"/>
  	    
  	</RelativeLayout>
     

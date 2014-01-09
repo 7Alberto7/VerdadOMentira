@@ -15,8 +15,8 @@
 
 	    <ImageButton
 	        android:id="@+id/btnHablar"
-	        android:layout_width="@dimen/tam_normal"
-	        android:layout_height="@dimen/tam_normal"
+	        android:layout_width="@dimen/tam_ancho_normal"
+	        android:layout_height="@dimen/tam_ancho_normal"
 	        android:layout_centerHorizontal="true"
 	        android:background="@drawable/microphone"
 	        android:contentDescription="@string/habla"

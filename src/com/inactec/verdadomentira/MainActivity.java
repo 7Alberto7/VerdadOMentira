@@ -11,6 +11,7 @@ import android.location.LocationProvider;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,11 +23,13 @@ public class MainActivity extends Activity {
 	Button btnTutorial;
 	Button btnNosotros;
 	AdView adView;
+	Typeface miFuente;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		miFuente = Typeface.createFromAsset(getAssets(), "fonts/SigmarOne.ttf");
 
 		LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
 		Criteria criteria = new Criteria();
@@ -46,6 +49,7 @@ public class MainActivity extends Activity {
 	    adView.loadAd(request);
 		
 		btnPlay = (Button) findViewById(R.id.btnPlay);
+		btnPlay.setTypeface(miFuente);
 		
 		btnPlay.setOnClickListener(new View.OnClickListener() {
 			
@@ -56,6 +60,7 @@ public class MainActivity extends Activity {
 		});
 		
 		btnTutorial = (Button) findViewById(R.id.btnTutorial);
+		btnTutorial.setTypeface(miFuente);
 		
 		btnTutorial.setOnClickListener(new View.OnClickListener() {
 			
@@ -66,6 +71,7 @@ public class MainActivity extends Activity {
 		});
 		
 		btnNosotros = (Button) findViewById(R.id.btnNosotros);
+		btnNosotros.setTypeface(miFuente);
 		
 		btnNosotros.setOnClickListener(new View.OnClickListener() {
 			
