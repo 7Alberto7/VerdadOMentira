@@ -14,7 +14,9 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.view.View;
@@ -90,8 +92,32 @@ public class Juego extends Activity {
     	}
     	catch(ActivityNotFoundException e)
     	{
-    		Intent browserIntent = new Intent(Intent.ACTION_VIEW,   Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.voicesearch"));
-    		startActivity(browserIntent);
+    		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	 
+    		builder.setTitle("Ups! No tienes instalado Voice Search de Google");
+    		builder.setMessage("¿Quieres instalarlo?");
+    	 
+    		builder.setPositiveButton("SÍ", new DialogInterface.OnClickListener() {    	 
+	    	   @Override
+	    	   public void onClick(DialogInterface dialog, int which) {	    	         
+	    	        // Sí. Abre Play Store para descargar el Voice Recognizer.
+	    	        dialog.dismiss();
+	    	        Intent browserIntent = new Intent(Intent.ACTION_VIEW,   Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.voicesearch"));
+	    	        startActivity(browserIntent);
+	    	   }    	 
+    		});
+    	 
+    		builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {    	 
+    			@Override
+    			public void onClick(DialogInterface dialog, int which) {
+    				// No. Aparece un toast diciendo que no puede ejecutarse el programa puesto que no tienes instalado el reconocedor de voz de google.    			
+    				dialog.dismiss();
+    	        	Toast.makeText(getApplicationContext(), "No podrá ejecutarse el reconocedor de voz de Google ya que no lo tienes instalado", Toast.LENGTH_SHORT).show();
+    			}    	 
+    		});    	 
+    	 
+    		AlertDialog alert = builder.create();
+    		alert.show();
     	}
     }
  
