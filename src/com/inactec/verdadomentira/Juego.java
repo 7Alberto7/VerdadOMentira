@@ -6,6 +6,7 @@ import com.inactec.verdadomentira.R;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import android.location.Criteria;
 import android.location.Location;
@@ -20,6 +21,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.speech.RecognizerIntent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -172,31 +174,47 @@ public class Juego extends Activity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
     public Boolean CalcularVeredicto(String cadena, long duracion) {
-    	double valorRandom = Math.random();
-    	int signoCoef = 1;
-    	if (valorRandom < 0.5) {
-			signoCoef = -1;
+    	boolean veredicto = false;
+    	int valor = 0;
+    	int longitud = 0;
+    	double total = 0;
+    	ListaLetras lista = new ListaLetras();
+    	lista.inicializarListaLetras();
+    	
+    	for (int i = 0; i < cadena.length(); i++) {
+			String letra = cadena.substring(i, i+1);
+			
+			Letra letraLista = lista.buscarLetra(letra);
+			if (letraLista != null) {
+				valor += letraLista.getValor();
+				longitud += 1;
+			}
 		}
-    	double coefAleatoriedad = signoCoef * (valorRandom * 0.2);
-		double valor =  ((double) cadena.length()*100 / (duracion - 2500)) + coefAleatoriedad;
-		boolean veredicto = true;
 		
-		if (valor < 0.8) {
-			veredicto = false;
+    	if (longitud > 0) {
+        	total = (double) valor / longitud;
+		}
+    	
+    	if (total > 13) {
+			veredicto = true;
 		}
 
-		if (valor < 0.4) {
-			mentira1.start();
-		} else if (valor >= 0.4 && valor < 0.6) {
-			mentira2.start();
-		} else if (valor >= 0.6 && valor < 0.8) {
-			mentira3.start();
-		} else if (valor >= 0.8 && valor < 1) {
-			verdad1.start();
-		} else if (valor >= 1 && valor < 1.2) {
-			verdad2.start();
+    	if (veredicto) {
+			if (total >= 15) {
+				verdad3.start();
+			} else if (total >= 14) {
+				verdad2.start();
+			} else {
+				verdad1.start();
+			}
 		} else {
-			verdad3.start();
+			if (total < 12.6) {
+				mentira1.start();
+			} else if (total <= 13) {
+				mentira2.start();
+			} else {
+				mentira3.start();
+			}
 		}
 		
     	return veredicto;
